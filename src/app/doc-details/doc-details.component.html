@@ -1,5 +1,9 @@
 <div *ngIf="doc">
-  <app-doc-bar></app-doc-bar>
+  <app-doc-bar [doc]="doc" (bold)="updateBold(doc)" (italic)="updateItalic(doc)" (underline)="updateUnderline(doc)"></app-doc-bar>
 
-  <p>{{ doc.body }}</p>
+  <div
+    [ngStyle]="{'font-weight': updateBold(doc), 'font-style': updateItalic(doc), 'text-decoration': updateUnderline(doc)}"
+  >
+    <p>{{ doc.body }}</p>
+  </div>
 </div>

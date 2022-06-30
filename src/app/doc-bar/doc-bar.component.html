@@ -1,13 +1,13 @@
 <div *ngIf="doc">
   <h3>{{ doc.name }}</h3>
 
-  <button type="button" title="Bold">
+  <button type="button" title="Bold" (click)="bold.emit()">
     <span class="material-symbols-outlined">format_bold</span>
   </button>
-  <button type="button" title="Italic">
+  <button type="button" title="Italic" (click)="italic.emit()">
     <span class="material-symbols-outlined">format_italic</span>
   </button>
-  <button type="button" title="Underline">
+  <button type="button" title="Underline" (click)="underline.emit()">
     <span class="material-symbols-outlined">format_underlined</span>
   </button>
   <select title="Font Type">

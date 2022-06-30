@@ -12,10 +12,9 @@ export class DocDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   updateBold(doc: Doc) {
-    var bold = 'normal';
+    var bold = 'none';
 
     if (doc.isBold === true) {
-      bold = 'normal';
       doc.isBold = false;
     } else {
       bold = 'bold';
@@ -26,10 +25,9 @@ export class DocDetailsComponent implements OnInit {
   }
 
   updateItalic(doc: Doc) {
-    var italic = 'normal';
+    var italic = 'none';
 
     if (doc.isItalic === true) {
-      italic = 'normal';
       doc.isItalic = false;
     } else {
       italic = 'italic';
@@ -43,7 +41,6 @@ export class DocDetailsComponent implements OnInit {
     var underlined = 'none';
 
     if (doc.isUnderlined === true) {
-      underlined = 'none';
       doc.isUnderlined = false;
     } else {
       underlined = 'underline';

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Doc, docs } from '../docs';
 
@@ -8,7 +8,10 @@ import { Doc, docs } from '../docs';
   styleUrls: ['./doc-bar.component.css'],
 })
 export class DocBarComponent implements OnInit {
-  doc: Doc | undefined;
+  @Input() doc: Doc | undefined;
+  @Output() bold = new EventEmitter();
+  @Output() italic = new EventEmitter();
+  @Output() underline = new EventEmitter();
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
