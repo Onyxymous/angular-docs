@@ -5,7 +5,7 @@ import { docs } from '../docs';
 @Component({
   selector: 'app-doc-list',
   templateUrl: './doc-list.component.html',
-  styleUrls: ['./doc-list.component.css']
+  styleUrls: ['./doc-list.component.css'],
 })
 export class DocListComponent {
   docs = docs;
@@ -14,7 +14,6 @@ export class DocListComponent {
     window.alert('The doc has been shared!');
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.

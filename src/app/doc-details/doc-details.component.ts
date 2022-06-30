@@ -12,41 +12,41 @@ export class DocDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   updateBold(doc: Doc) {
-    var bold = 'none';
-
+    var bold = '';
+    
     if (doc.isBold === true) {
-      doc.isBold = false;
-    } else {
       bold = 'bold';
-      doc.isBold = true;
+    } else {
+      bold = 'normal';
     }
-
+    
+    doc.isBold = !doc.isBold;
     return bold;
   }
 
   updateItalic(doc: Doc) {
-    var italic = 'none';
+    var italic = '';
 
     if (doc.isItalic === true) {
-      doc.isItalic = false;
-    } else {
       italic = 'italic';
-      doc.isItalic = true;
+    } else {
+      italic = 'normal';
     }
 
+    doc.isItalic = !doc.isItalic;
     return italic;
   }
 
   updateUnderline(doc: Doc) {
-    var underlined = 'none';
+    var underlined = '';
 
     if (doc.isUnderlined === true) {
-      doc.isUnderlined = false;
-    } else {
       underlined = 'underline';
-      doc.isUnderlined = true;
+    } else {
+      underlined = 'none';
     }
 
+    doc.isUnderlined = !doc.isUnderlined;
     return underlined;
   }
 
@@ -55,15 +55,5 @@ export class DocDetailsComponent implements OnInit {
     const docNameFromRoute = String(routeParams.get('docName'));
 
     this.doc = docs.find((doc) => doc.name === docNameFromRoute);
-
-    if (this.doc) {
-      var isBold = this.doc.isBold;
-      var isItalic = this.doc.isItalic;
-      var isUnderlined = this.doc.isUnderlined;
-      var fonttype = this.doc.fonttype;
-      var fontsize = this.doc.fontsize;
-      var fontcolor = this.doc.fontcolor;
-      var highlight = this.doc.highlight;
-    }
   }
 }

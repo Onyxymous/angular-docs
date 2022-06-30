@@ -1,8 +1,11 @@
-<h2>My Documents</h2>
+<div class="my-doc-bar">
+  <h2>My Documents</h2>
+</div>
 
 <div *ngFor="let doc of docs">
   <a [title]="'Open ' + doc.name" [routerLink]="['/docs', doc.name]">
-    <span class="material-symbols-outlined">draft</span><h4>{{ doc.name }}</h4>
+    <span class="material-symbols-outlined">draft</span>
+    <h4>{{ doc.name }}</h4>
   </a>
 </div>
 
