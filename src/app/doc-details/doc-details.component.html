@@ -1,1 +1,5 @@
-<p>This is just a test</p>
+<div *ngIf="doc">
+  <app-doc-bar></app-doc-bar>
+
+  <p>{{ doc.body }}</p>
+</div>
