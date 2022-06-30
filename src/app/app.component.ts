@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Doc, docs } from './docs';
 
 @Component({
@@ -7,6 +8,8 @@ import { Doc, docs } from './docs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  doc: Doc | undefined;
+  constructor(private route: ActivatedRoute) {}
 }
 
 

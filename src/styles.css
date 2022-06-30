@@ -41,7 +41,7 @@ h1 {
   font-size: 20px;
   color: #ffffff;
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 14px;
 }
 
 h1,
@@ -159,19 +159,35 @@ app-top-bar h1 {
 app-doc-list {
   display: block;
   margin-top: 16px;
+  border-width: 6px;
 }
-app-doc-list span {
+app-doc-list i.material-icons {
   margin-bottom: 0px;
   display: inline;
-  color: #0d1691;
+  top: 6px;
+  position: relative;
 }
 
 app-doc-list h4 {
   display: inline-flex;
-  bottom: 6px;
   left: 6px;
   position: relative;
-  margin-bottom: 0px;
+}
+
+app-doc-list table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+app-doc-list tr, app-doc-list th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+app-doc-details {
+  width: 90%;
+  margin: auto;
 }
 
 /* Doc Bar */
@@ -221,8 +237,12 @@ app-doc-bar h3 {
   color: #0d1691;
 }
 
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+.doc-main-body {
+  width: 99.5%;
+  height: 56px;
+  display: block;
+  position: relative;
+  margin: auto;
+  border-radius: 4px;
+  padding: 0px 16px;
+}

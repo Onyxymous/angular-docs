@@ -2,13 +2,21 @@
   <h2>My Documents</h2>
 </div>
 
-<div *ngFor="let doc of docs">
-  <a [title]="'Open ' + doc.name" [routerLink]="['/docs', doc.name]">
-    <span class="material-symbols-outlined">draft</span>
-    <h4>{{ doc.name }}</h4>
-  </a>
-</div>
-
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Last Accessed</th>
+  </tr>
+  <tr *ngFor="let doc of docs">
+    <th>
+      <a [title]="'Open ' + doc.name" [routerLink]="['/docs', doc.name]"
+        ><i class="material-icons">article</i>
+        <h4>{{ doc.name }}</h4></a
+      >
+    </th>
+    <th>Last Accessed</th>
+  </tr>
+</table>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

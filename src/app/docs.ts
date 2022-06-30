@@ -13,14 +13,14 @@ export interface Doc {
 export const docs = [
   {
     name: 'My Test Document',
-    body: 'Hello! If you can read this, you are viewing a document in this Angular program I made.',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     isBold: false,
     isItalic: false,
     isUnderlined: false,
-    fonttype: "Arial",
+    fonttype: 'Arial',
     fontsize: 11,
-    fontcolor: "000000",
-    highlight: "ffffff"
+    fontcolor: '000000',
+    highlight: 'ffffff',
   },
   {
     name: 'Wild Doc',
@@ -28,10 +28,10 @@ export const docs = [
     isBold: false,
     isItalic: false,
     isUnderlined: false,
-    fonttype: "Arial",
+    fonttype: 'Arial',
     fontsize: 11,
-    fontcolor: "000000",
-    highlight: "ffffff"
+    fontcolor: '000000',
+    highlight: 'ffffff',
   },
   {
     name: 'random',
@@ -39,10 +39,10 @@ export const docs = [
     isBold: false,
     isItalic: false,
     isUnderlined: false,
-    fonttype: "Arial",
+    fonttype: 'Arial',
     fontsize: 11,
-    fontcolor: "000000",
-    highlight: "ffffff"
+    fontcolor: '000000',
+    highlight: 'ffffff',
   },
 ];
 
