@@ -35,7 +35,7 @@ h1 {
   display: block;
   position: relative;
   margin: auto;
-  border-radius: 4px;
+  border-radius: 4px 4px 0px 0px;
 }
 .my-doc-bar h2 {
   font-size: 20px;
