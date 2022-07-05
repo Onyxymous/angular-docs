@@ -6,15 +6,16 @@
     (underline)="updateUnderline(doc)"
   ></app-doc-bar>
 
-  <div
-    class="doc-body"
-    [ngStyle]="{
-      'font-weight': updateBold(doc),
-      'font-style': updateItalic(doc),
-      'text-decoration': updateUnderline(doc),
-      'font-family': 'Brush Script MT'
-    }"
-  >
-    <textarea>{{ doc.body }}</textarea>
+  <div class="doc-body">
+    <textarea
+      [ngStyle]="{
+        'font-weight': updateBold(doc),
+        'font-style': updateItalic(doc),
+        'text-decoration': updateUnderline(doc),
+        'font-family': updateFontType(doc),
+        'font-size.px': updateFontSize(doc)
+      }"
+      >{{ doc.body }}</textarea
+    >
   </div>
 </div>

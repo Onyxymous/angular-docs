@@ -10,12 +10,12 @@
     <button type="button" title="Underline" (click)="underline.emit()" [ngStyle]="{'opacity': underlinedButtonSelect(doc)}">
       <i class="material-icons">format_underlined</i>
     </button>
-    <select title="Font Type" [(ngModel)]="sfont" (change)="updateFontType(this.doc)">
-      <option *ngFor="let font of fonts" [value]="font">
+    <select title="Font Type" [(ngModel)]="sfont" (ngModelChange)="updateFontType(doc, sfont)">
+      <option *ngFor="let font of fonts" [value]="font" [ngStyle]="{'font-family': font}">
         {{ font }}
       </option>
     </select>
-    <select title="Font Size" [(ngModel)]="ssize">
+    <select title="Font Size" [(ngModel)]="ssize" (ngModelChange)="updateFontSize(doc, ssize)">
       <option *ngFor="let size of sizes" [value]="size">
         {{ size }}
       </option>
