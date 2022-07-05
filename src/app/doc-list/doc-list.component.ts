@@ -9,8 +9,4 @@ import { docs } from '../docs';
 })
 export class DocListComponent {
   docs = docs;
-
-  share() {
-    window.alert('The doc has been shared!');
-  }
 }

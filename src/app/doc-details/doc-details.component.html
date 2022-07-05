@@ -4,7 +4,6 @@
     (bold)="updateBold(doc)"
     (italic)="updateItalic(doc)"
     (underline)="updateUnderline(doc)"
-    (fonttype)="updateFontType(doc)"
   ></app-doc-bar>
 
   <div
@@ -13,7 +12,7 @@
       'font-weight': updateBold(doc),
       'font-style': updateItalic(doc),
       'text-decoration': updateUnderline(doc),
-      'font-family': updateFontType(doc)
+      'font-family': 'Brush Script MT'
     }"
   >
     <p>{{ doc.body }}</p>
