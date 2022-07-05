@@ -13,13 +13,13 @@ export class DocDetailsComponent implements OnInit {
 
   updateBold(doc: Doc) {
     var bold = '';
-    
+
     if (doc.isBold === true) {
       bold = 'bold';
     } else {
       bold = 'normal';
     }
-    
+
     doc.isBold = !doc.isBold;
     return bold;
   }
@@ -48,6 +48,46 @@ export class DocDetailsComponent implements OnInit {
 
     doc.isUnderlined = !doc.isUnderlined;
     return underlined;
+  }
+
+  updateFontType(doc: Doc) {
+    var type = '';
+
+    switch (doc.fonttype) {
+      case 'Brush Script MT':
+        type = 'Brush Script MT';
+        break;
+      case 'Courier New':
+        type = 'Courier New';
+        break;
+      case 'Garamond':
+        type = 'Garamond';
+        break;
+      case 'Georgia':
+        type = 'Georgia';
+        break;
+      case 'Helvetica':
+        type = 'Helvetica';
+        break;
+      case 'Tahoma':
+        type = 'Tahoma';
+        break;
+      case 'Times New Roman':
+        type = 'Times New Roman';
+        break;
+      case 'Trebuchet MS':
+        type = 'Trebuchet MS';
+        break;
+      case 'Verdana':
+        type = 'Verdana';
+        break;
+      default:
+        type = 'Arial';
+        break;
+    }
+
+    doc.fonttype = type;
+    return type;
   }
 
   ngOnInit() {

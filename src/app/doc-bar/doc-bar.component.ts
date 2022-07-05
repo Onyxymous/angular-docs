@@ -12,6 +12,7 @@ export class DocBarComponent implements OnInit {
   @Output() bold = new EventEmitter();
   @Output() italic = new EventEmitter();
   @Output() underline = new EventEmitter();
+  @Output() fonttype = new EventEmitter();
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
