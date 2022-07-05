@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Doc, docs } from '../docs';
+import { Font, fonts } from '../fonttype';
+import { Size, sizes } from '../fontsize';
 
 @Component({
   selector: 'app-doc-bar',
@@ -9,6 +11,8 @@ import { Doc, docs } from '../docs';
 })
 export class DocBarComponent implements OnInit {
   @Input() doc: Doc | undefined;
+  @Input() font: Font | undefined;
+  @Input() size: Size | undefined;
   @Output() bold = new EventEmitter();
   @Output() italic = new EventEmitter();
   @Output() underline = new EventEmitter();
@@ -20,5 +24,7 @@ export class DocBarComponent implements OnInit {
     const docNameFromRoute = String(routeParams.get('docName'));
 
     this.doc = docs.find(doc => doc.name === docNameFromRoute);
+
+
   }
 }
