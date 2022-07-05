@@ -1,16 +1,16 @@
 <div *ngIf="doc">
   <h3>{{ doc.name }}</h3>
   <div class="doc-options">
-    <button type="button" title="Bold" (click)="bold.emit()">
+    <button type="button" title="Bold" (click)="bold.emit()" [ngStyle]="{'opacity': boldButtonSelect(doc)}">
       <i class="material-icons">format_bold</i>
     </button>
-    <button type="button" title="Italic" (click)="italic.emit()">
+    <button type="button" title="Italic" (click)="italic.emit()" [ngStyle]="{'opacity': italicButtonSelect(doc)}">
       <i class="material-icons">format_italic</i>
     </button>
-    <button type="button" title="Underline" (click)="underline.emit()">
+    <button type="button" title="Underline" (click)="underline.emit()" [ngStyle]="{'opacity': underlinedButtonSelect(doc)}">
       <i class="material-icons">format_underlined</i>
     </button>
-    <select title="Font Type" [(ngModel)]="sfont" (change)="updateFontType($event.doc)">
+    <select title="Font Type" [(ngModel)]="sfont" (change)="updateFontType(this.doc)">
       <option *ngFor="let font of fonts" [value]="font">
         {{ font }}
       </option>

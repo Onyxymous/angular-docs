@@ -117,6 +117,30 @@ export class DocBarComponent implements OnInit {
     return size;
   }
 
+  boldButtonSelect(doc: Doc) {
+    if (!doc.isBold) {
+      return 0.5;
+    } else {
+      return 1;
+    }
+  }
+
+  italicButtonSelect(doc: Doc) {
+    if (!doc.isItalic) {
+      return 0.5;
+    } else {
+      return 1;
+    }
+  }
+
+  underlinedButtonSelect(doc: Doc) {
+    if (!doc.isUnderlined) {
+      return 0.5;
+    } else {
+      return 1;
+    }
+  }
+
   ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
     const docNameFromRoute = String(routeParams.get('docName'));
