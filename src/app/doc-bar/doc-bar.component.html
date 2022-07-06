@@ -1,5 +1,5 @@
 <div *ngIf="doc">
-  <h3>{{ doc.name }}</h3>
+  <a (click)="renameDoc(doc)" [ngStyle]="{'cursor': 'text'}"><h3>{{ doc.name }}</h3></a>
   <div class="doc-options">
     <button type="button" title="Bold" (click)="bold.emit()" [ngStyle]="{'opacity': boldButtonSelect(doc)}">
       <i class="material-icons">format_bold</i>

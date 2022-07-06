@@ -50,6 +50,17 @@ export class DocBarComponent implements OnInit {
     }
   }
 
+  renameDoc(doc: Doc) {
+    let docname = prompt("New Name of Document:", doc.name);
+    if (docname != null) {
+      doc.name = docname;
+      doc.docBarName = docname;
+      if (docname.length > 16) {
+        doc.docBarName = doc.docBarName.substring(0, 13) + "...";
+      }
+    }
+  }
+
   ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
     const docNameFromRoute = String(routeParams.get('docName'));
