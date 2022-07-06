@@ -9,6 +9,7 @@ import { Doc, docs } from '../docs';
 })
 export class DocDetailsComponent implements OnInit {
   doc: Doc | undefined;
+  savebody: Doc | undefined;
   constructor(private route: ActivatedRoute) {}
 
   updateBold(doc: Doc) {
@@ -136,10 +137,61 @@ export class DocDetailsComponent implements OnInit {
     return size;
   }
 
+  updateColor(doc: Doc) {
+    let color = prompt("Type in a Valid Hex Code:", doc.fontcolor);
+    if (color != null) {
+      if (color.length == 6) {
+        color = color.toLowerCase();
+        let isValid = true;
+        for (let i = 0; i < 6; i++) {
+          let decimal = color.charCodeAt(i);
+          if (decimal < 48 || (decimal > 57 && decimal < 97) || decimal > 102) {
+            isValid = false;
+          }
+        }
+
+        if (isValid == false) {
+          window.alert("ERROR: Enter in a valid hex code");
+        } else {
+          doc.fontcolor = "#" + color;
+        }
+      } else {
+        window.alert("ERROR: Enter in a valid hex code");
+      }
+    }
+  }
+
+  updateHighlight(doc: Doc) {
+    let color = prompt("Type in a Valid Hex Code:", doc.highlight);
+    if (color != null) {
+      if (color.length == 6) {
+        color = color.toLowerCase();
+        let isValid = true;
+        for (let i = 0; i < 6; i++) {
+          let decimal = color.charCodeAt(i);
+          if (decimal < 48 || (decimal > 57 && decimal < 97) || decimal > 102) {
+            isValid = false;
+          }
+        }
+
+        if (isValid == false) {
+          window.alert("ERROR: Enter in a valid hex code");
+        } else {
+          doc.highlight = "#" + color;
+        }
+      } else if (color == 'none') {
+        doc.highlight = 'none';
+      } 
+    } else {
+      window.alert("ERROR: Enter in a valid hex code");
+    }
+  }
+
   ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
     const docNameFromRoute = String(routeParams.get('docName'));
 
     this.doc = docs.find((doc) => doc.name === docNameFromRoute);
+    this.savebody = this.doc;
   }
 }

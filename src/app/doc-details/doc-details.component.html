@@ -4,6 +4,8 @@
     (bold)="updateBold(doc)"
     (italic)="updateItalic(doc)"
     (underline)="updateUnderline(doc)"
+    (color)="updateColor(doc)"
+    (highlight)="updateHighlight(doc)"
   ></app-doc-bar>
 
   <div class="doc-body">
@@ -12,8 +14,10 @@
         'font-weight': updateBold(doc),
         'font-style': updateItalic(doc),
         'text-decoration': updateUnderline(doc),
-        'font-family': updateFontType(doc),
-        'font-size.px': updateFontSize(doc)
+        'font-family': doc.fonttype,
+        'font-size.px': doc.fontsize,
+        'color': doc.fontcolor,
+        'background-color': doc.highlight
       }"
       >{{ doc.body }}</textarea
     >

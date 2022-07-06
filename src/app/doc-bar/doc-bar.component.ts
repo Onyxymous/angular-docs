@@ -16,6 +16,8 @@ export class DocBarComponent implements OnInit {
   @Output() bold = new EventEmitter();
   @Output() italic = new EventEmitter();
   @Output() underline = new EventEmitter();
+  @Output() color = new EventEmitter();
+  @Output() highlight = new EventEmitter();
   constructor(private route: ActivatedRoute) {}
 
   updateFontType(doc: Doc, font: string) {
@@ -60,6 +62,8 @@ export class DocBarComponent implements OnInit {
       }
     }
   }
+
+
 
   ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
